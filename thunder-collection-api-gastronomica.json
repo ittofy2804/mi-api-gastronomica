@@ -1,0 +1,88 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "API Gastronomica",
+  "dateExported": "2026-10-14T00:00:00.000Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "name": "Login Admin",
+      "method": "POST",
+      "url": "http://localhost:5000/api/users/login",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"admin@restaurante.com\",\n  \"password\": \"admin123\"\n}"
+      },
+      "tests": []
+    },
+    {
+      "name": "Listar usuarios",
+      "method": "GET",
+      "url": "http://localhost:5000/api/users",
+      "headers": [],
+      "tests": []
+    },
+    {
+      "name": "Crear producto",
+      "method": "POST",
+      "url": "http://localhost:5000/api/products",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nombre\": \"Arepa rellena\",\n  \"descripcion\": \"Arepa con queso y pollo\",\n  \"precio\": 22000,\n  \"categoria_id\": 2,\n  \"imagen\": \"arepa.jpg\",\n  \"disponible\": true\n}"
+      },
+      "tests": []
+    },
+    {
+      "name": "Listar categorías",
+      "method": "GET",
+      "url": "http://localhost:5000/api/categories",
+      "headers": [],
+      "tests": []
+    },
+    {
+      "name": "Crear orden",
+      "method": "POST",
+      "url": "http://localhost:5000/api/orders",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"usuario_id\": 2,\n  \"estado\": \"pendiente\",\n  \"items\": [\n    {\n      \"producto_id\": 2,\n      \"cantidad\": 1,\n      \"precio\": 42000\n    }\n  ]\n}"
+      },
+      "tests": []
+    },
+    {
+      "name": "Crear suscripción",
+      "method": "POST",
+      "url": "http://localhost:5000/api/subscriptions",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"usuario_id\": 2,\n  \"plan\": \"Gold\",\n  \"fecha_inicio\": \"2026-10-15\",\n  \"fecha_fin\": \"2026-11-15\",\n  \"estado\": \"activa\"\n}"
+      },
+      "tests": []
+    },
+    {
+      "name": "Error login inválido",
+      "method": "POST",
+      "url": "http://localhost:5000/api/users/login",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"admin@restaurante.com\",\n  \"password\": \"incorrecta\"\n}"
+      },
+      "tests": []
+    }
+  ]
+}

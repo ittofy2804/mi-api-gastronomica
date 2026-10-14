@@ -1,0 +1,18 @@
+{
+  "name": "baseproyecto2026",
+  "version": "1.0.0",
+  "description": "API REST para gestión de usuarios, categorías, productos, pedidos y suscripciones",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql2": "^3.20.0",
+    "swagger-ui-express": "^5.0.0"
+  }
+}
